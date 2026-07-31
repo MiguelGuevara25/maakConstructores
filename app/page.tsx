@@ -138,7 +138,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {SERVICES.map((s, i) => (
               <Link
-                href={s.href}
+                href={s.href || "/servicios"}
                 key={s.title}
                 className={`reveal delay-${(i + 1) * 100} group`}
               >
