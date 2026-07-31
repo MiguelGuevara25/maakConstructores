@@ -47,3 +47,9 @@ export interface Milestones {
   title: string;
   desc: string;
 }
+
+export interface Step {
+  num: string;
+  title: string;
+  desc: string;
+}

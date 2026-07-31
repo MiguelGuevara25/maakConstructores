@@ -12,7 +12,7 @@ import {
   Gauge,
   Flame,
 } from "lucide-react";
-import { DetailedServices } from "../interfaces";
+import { DetailedServices, Step } from "../interfaces";
 
 export const SERVICES: DetailedServices[] = [
   {
@@ -61,5 +61,28 @@ export const SERVICES: DetailedServices[] = [
       { icon: FileCheck, text: "Certificación de instalaciones" },
     ],
     cta: "Quiero un mantenimiento",
+  },
+];
+
+export const steps: Step[] = [
+  {
+    num: "01",
+    title: "Contacto",
+    desc: "Nos escribes por WhatsApp y coordinamos la visita.",
+  },
+  {
+    num: "02",
+    title: "Evaluación",
+    desc: "Realizamos una inspección técnica de tu espacio.",
+  },
+  {
+    num: "03",
+    title: "Cotización",
+    desc: "Te enviamos una propuesta clara y personalizada.",
+  },
+  {
+    num: "04",
+    title: "Instalación",
+    desc: "Ejecutamos el trabajo con seguridad certificada.",
   },
 ];
