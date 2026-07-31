@@ -11,42 +11,14 @@ import {
   MessageCircle,
   Clock,
 } from "lucide-react";
-import Image from "next/image";
 import {
   COMPANY,
   WHATSAPP_LINK,
   WHATSAPP_LINK_CUSTOM,
 } from "@/src/libs/company";
 import { useScrollReveal } from "@/src/hooks/use-scroll-reveal";
-
-const SERVICE_TYPES = [
-  "Gas Natural Residencial",
-  "Gas Natural Comercial e Industrial",
-  "Mantenimiento y Certificación",
-  "Otro / Consulta general",
-];
-
-const DISTRICTS = [
-  "Cercado de Lima",
-  "Miraflores",
-  "San Isidro",
-  "Barranco",
-  "Surco",
-  "San Borja",
-  "La Molina",
-  "Jesús María",
-  "Lince",
-  "Magdalena",
-  "Pueblo Libre",
-  "San Miguel",
-  "Breña",
-  "Rímac",
-  "Los Olivos",
-  "Comas",
-  "Independencia",
-  "San Martín de Porres",
-  "Otro",
-];
+import Header from "@/src/components/Header";
+import { DISTRICTS, SERVICE_TYPES } from "@/src/data/contacto";
 
 export default function ContactoPage() {
   useScrollReveal();
@@ -63,11 +35,13 @@ export default function ContactoPage() {
     e.preventDefault();
     setStatus("sending");
 
-    const msg = `Hola Maak Constructores, deseo solicitar una visita técnica y cotización.
-Nombre: ${form.name}
-Teléfono: ${form.phone}
-Tipo de servicio: ${form.service}
-Ubicación/Distrito: ${form.district}`;
+    const msg = `
+      Hola Maak Constructores, deseo solicitar una visita técnica y cotización.
+      Nombre: ${form.name}
+      Teléfono: ${form.phone}
+      Tipo de servicio: ${form.service}
+      Ubicación/Distrito: ${form.district}
+    `;
 
     setTimeout(() => {
       window.open(WHATSAPP_LINK_CUSTOM(msg), "_blank");
@@ -80,29 +54,13 @@ Ubicación/Distrito: ${form.district}`;
   return (
     <div className="overflow-x-hidden">
       {/* HEADER */}
-      <section className="relative py-24 bg-maak-dark">
-        <div className="absolute inset-0 opacity-20">
-          <Image
-            fill
-            priority
-            src="https://images.pexels.com/photos/6285146/pexels-photo-6285146.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-            alt="Contacto Maak Constructores"
-            className="object-cover"
-          />
-        </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <span className="inline-block text-maak-yellow font-bold text-sm uppercase tracking-wider mb-3 animate-fade-in-up">
-            Contáctanos
-          </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 animate-fade-in-up delay-100">
-            Solicita tu Visita Técnica
-          </h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto animate-fade-in-up delay-200">
-            Completa el formulario y te contactaremos por WhatsApp para
-            coordinar tu cotización personalizada.
-          </p>
-        </div>
-      </section>
+      <Header
+        src="https://images.pexels.com/photos/6285146/pexels-photo-6285146.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+        title="Contáctanos"
+        subtitle="Solicita tu Visita Técnica"
+        description="Completa el formulario y te contactaremos por WhatsApp para
+            coordinar tu cotización personalizada."
+      />
 
       {/* CONTACT */}
       <section className="py-20 bg-maak-bg">

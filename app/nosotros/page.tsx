@@ -1,60 +1,12 @@
 "use client";
 
-import { useScrollReveal } from "@/src/hooks/use-scroll-reveal";
-import { WHATSAPP_LINK } from "@/src/libs/company";
-import {
-  GraduationCap,
-  ShieldCheck,
-  Award,
-  Target,
-  Eye,
-  Heart,
-  CheckCircle2,
-  Users,
-  Building2,
-} from "lucide-react";
 import Image from "next/image";
+import { Target, Eye, CheckCircle2, Users, Building2 } from "lucide-react";
 
-const VALUES = [
-  {
-    icon: ShieldCheck,
-    title: "Seguridad ante todo",
-    desc: "Cumplimos estrictamente las normas peruanas de seguridad en cada instalación.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Respaldo técnico UNI",
-    desc: "Nuestro equipo está formado por ingenieros de la Universidad Nacional de Ingeniería.",
-  },
-  {
-    icon: Award,
-    title: "Calidad certificada",
-    desc: "Materiales y procesos que garantizan instalaciones duraderas y confiables.",
-  },
-  {
-    icon: Heart,
-    title: "Compromiso con el cliente",
-    desc: "Acompañamiento técnico personalizado antes, durante y después del proyecto.",
-  },
-];
-
-const MILESTONES = [
-  {
-    year: "Inicio",
-    title: "Fundación",
-    desc: "Maak Constructores nace con la misión de brindar instalaciones de gas natural seguras en Lima.",
-  },
-  {
-    year: "Crecimiento",
-    title: "Expansión de servicios",
-    desc: "Ampliamos nuestra oferta al sector comercial e industrial con gabinetes de regulación.",
-  },
-  {
-    year: "Hoy",
-    title: "Referente técnico",
-    desc: "Somos un referente en conversión y mantenimiento de gas natural en el cercado de Lima.",
-  },
-];
+import Header from "@/src/components/Header";
+import { WHATSAPP_LINK } from "@/src/libs/company";
+import { MILESTONES, VALUES } from "@/src/data/nosotros";
+import { useScrollReveal } from "@/src/hooks/use-scroll-reveal";
 
 export default function NosotrosPage() {
   useScrollReveal();
@@ -62,29 +14,15 @@ export default function NosotrosPage() {
   return (
     <div className="overflow-x-hidden">
       {/* HEADER */}
-      <section className="relative py-24 bg-maak-dark">
-        <div className="absolute inset-0 opacity-20">
-          <Image
-            fill
-            src="https://images.pexels.com/photos/8961146/pexels-photo-8961146.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-            alt="Equipo de ingeniería"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <span className="inline-block text-maak-yellow font-bold text-sm uppercase tracking-wider mb-3 animate-fade-in-up">
-            Sobre Nosotros
-          </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 animate-fade-in-up delay-100">
-            Profesionales en Gas Natural
-          </h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto animate-fade-in-up delay-200">
-            Maak Constructores es una empresa especializada en la instalación,
+
+      <Header
+        src="https://images.pexels.com/photos/8961146/pexels-photo-8961146.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+        title="Sobre Nosotros"
+        subtitle="Profesionales en Gas Natural"
+        description="Maak Constructores es una empresa especializada en la instalación,
             conversión y mantenimiento de gas natural en Lima, Perú, con
-            respaldo técnico profesional.
-          </p>
-        </div>
-      </section>
+            respaldo técnico profesional."
+      />
 
       {/* INTRO + IMAGE */}
       <section className="py-20 bg-maak-bg">

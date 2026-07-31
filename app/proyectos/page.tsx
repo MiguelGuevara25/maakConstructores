@@ -1,80 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import Image from "next/image";
-import { useScrollReveal } from "@/src/hooks/use-scroll-reveal";
+
+import Header from "@/src/components/Header";
 import { WHATSAPP_LINK } from "@/src/libs/company";
-
-const CATEGORIES = [
-  "Todos",
-  "Residencial",
-  "Comercial",
-  "Mantenimiento",
-] as const;
-type Category = (typeof CATEGORIES)[number];
-
-const PROJECTS: { img: string; title: string; cat: Category; desc: string }[] =
-  [
-    {
-      img: "https://images.pexels.com/photos/9389356/pexels-photo-9389356.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-      title: "Instalación de red interna residencial",
-      cat: "Residencial",
-      desc: "Red de tuberías de gas natural para vivienda en el cercado de Lima.",
-    },
-    {
-      img: "https://images.pexels.com/photos/15671373/pexels-photo-15671373.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-      title: "Conversión de cocina industrial",
-      cat: "Comercial",
-      desc: "Conversión completa de cocina de restaurante a gas natural.",
-    },
-    {
-      img: "https://images.pexels.com/photos/16752780/pexels-photo-16752780.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-      title: "Instalación de medidor y gabinete",
-      cat: "Mantenimiento",
-      desc: "Montaje de medidor con gabinete de regulación certificado.",
-    },
-    {
-      img: "https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-      title: "Red de tuberías certificada",
-      cat: "Residencial",
-      desc: "Instalación de red interna con materiales de alta resistencia.",
-    },
-    {
-      img: "https://images.pexels.com/photos/7058546/pexels-photo-7058546.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-      title: "Conversión de cocina de restaurante",
-      cat: "Comercial",
-      desc: "Adaptación de línea de cocción a gas natural para cocina comercial.",
-    },
-    {
-      img: "https://images.pexels.com/photos/7865898/pexels-photo-7865898.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-      title: "Inspección y mantenimiento de válvulas",
-      cat: "Mantenimiento",
-      desc: "Revisión técnica de válvulas y reguladores de presión.",
-    },
-    {
-      img: "https://images.pexels.com/photos/6510984/pexels-photo-6510984.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-      title: "Conversión de cocina residencial",
-      cat: "Residencial",
-      desc: "Conversión de cocina de hogar a gas natural con seguridad certificada.",
-    },
-    {
-      img: "https://images.pexels.com/photos/12181750/pexels-photo-12181750.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-      title: "Instalación para panadería",
-      cat: "Comercial",
-      desc: "Sistema de gas natural para horno de panadería industrial.",
-    },
-    {
-      img: "https://images.pexels.com/photos/36826989/pexels-photo-36826989.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-      title: "Mantenimiento de reguladores",
-      cat: "Mantenimiento",
-      desc: "Calibración y mantenimiento de reguladores de presión de gas.",
-    },
-  ];
+import { CATEGORIES, PROJECTS } from "@/src/data/proyectos";
+import { useScrollReveal } from "@/src/hooks/use-scroll-reveal";
 
 export default function ProyectosPage() {
   useScrollReveal();
-  const [active, setActive] = useState<Category>("Todos");
+  const [active, setActive] = useState<string>("Todos");
 
   const filtered =
     active === "Todos" ? PROJECTS : PROJECTS.filter((p) => p.cat === active);
@@ -82,29 +19,14 @@ export default function ProyectosPage() {
   return (
     <div className="overflow-x-hidden">
       {/* HEADER */}
-      <section className="relative py-24 bg-maak-dark">
-        <div className="absolute inset-0 opacity-20">
-          <Image
-            fill
-            priority
-            src="https://images.pexels.com/photos/27354192/pexels-photo-27354192.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-            alt="Proyectos de gas natural"
-            className="object-cover"
-          />
-        </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <span className="inline-block text-maak-yellow font-bold text-sm uppercase tracking-wider mb-3 animate-fade-in-up">
-            Portafolio
-          </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 animate-fade-in-up delay-100">
-            Nuestros Proyectos
-          </h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto animate-fade-in-up delay-200">
-            Una muestra de las instalaciones y mantenimientos de gas natural que
-            hemos realizado en Lima.
-          </p>
-        </div>
-      </section>
+
+      <Header
+        src="https://images.pexels.com/photos/27354192/pexels-photo-27354192.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+        title="Portafolio"
+        subtitle="Nuestros Proyectos"
+        description="Una muestra de las instalaciones y mantenimientos de gas natural que
+            hemos realizado en Lima."
+      />
 
       {/* FILTER + GRID */}
       <section className="py-20 bg-maak-bg">

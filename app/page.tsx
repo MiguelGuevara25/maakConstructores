@@ -1,107 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import {
-  PiggyBank,
-  ShieldCheck,
-  GraduationCap,
-  Users,
-  ArrowRight,
-  Home as HomeIcon,
-  Building2,
-  Wrench,
-  Phone,
-  Star,
-  CheckCircle2,
-} from "lucide-react";
-import { useScrollReveal } from "@/src/hooks/use-scroll-reveal";
-import { COMPANY, WHATSAPP_LINK } from "@/src/libs/company";
 import Image from "next/image";
 
-const BENEFITS = [
-  {
-    icon: PiggyBank,
-    title: "Ahorro Real",
-    desc: "Reduce hasta 50% tu gasto en energía al convertir tus equipos a gas natural.",
-    color: "text-maak-yellow",
-    bg: "bg-maak-yellow/10",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Seguridad Certificada",
-    desc: "Instalaciones que cumplen todas las normas peruanas de seguridad vigentes.",
-    color: "text-maak-cyan",
-    bg: "bg-maak-cyan/10",
-  },
-  {
-    icon: GraduationCap,
-    title: "Respaldo Técnico UNI",
-    desc: "Ingenieros colegiados con formación de la Universidad Nacional de Ingeniería.",
-    color: "text-maak-magenta",
-    bg: "bg-maak-magenta/10",
-  },
-  {
-    icon: Users,
-    title: "Atención Personalizada",
-    desc: "Asesoría y acompañamiento técnico en cada etapa de tu proyecto.",
-    color: "text-maak-yellow",
-    bg: "bg-maak-yellow/10",
-  },
-];
-
-const SERVICES = [
-  {
-    icon: HomeIcon,
-    title: "Gas Natural Residencial",
-    desc: "Conversión de cocinas, termas, secadoras y redes internas para tu hogar.",
-    href: "/servicios#residencial",
-    img: "https://images.pexels.com/photos/6510984/pexels-photo-6510984.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-  },
-  {
-    icon: Building2,
-    title: "Gas Natural Comercial e Industrial",
-    desc: "Restaurantes, panaderías, hornos industriales y gabinetes de regulación.",
-    href: "/servicios#comercial",
-    img: "https://images.pexels.com/photos/15671373/pexels-photo-15671373.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-  },
-  {
-    icon: Wrench,
-    title: "Mantenimiento y Certificación",
-    desc: "Detección de fugas, mantenimiento preventivo e inspección técnica.",
-    href: "/servicios#mantenimiento",
-    img: "https://images.pexels.com/photos/16752780/pexels-photo-16752780.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-  },
-];
-
-const GALLERY = [
-  {
-    img: "https://images.pexels.com/photos/9389356/pexels-photo-9389356.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    title: "Instalación de red interna",
-    cat: "Residencial",
-  },
-  {
-    img: "https://images.pexels.com/photos/15671373/pexels-photo-15671373.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    title: "Conversión de cocina industrial",
-    cat: "Comercial",
-  },
-  {
-    img: "https://images.pexels.com/photos/16752780/pexels-photo-16752780.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    title: "Instalación de medidor",
-    cat: "Mantenimiento",
-  },
-  {
-    img: "https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    title: "Red de tuberías certificada",
-    cat: "Residencial",
-  },
-];
-
-const STATS = [
-  { value: "50%", label: "Ahorro en energía" },
-  { value: "100%", label: "Seguridad certificada" },
-  { value: "+10", label: "Años de experiencia" },
-  { value: "24h", label: "Respuesta técnica" },
-];
+import { COMPANY, WHATSAPP_LINK } from "@/src/libs/company";
+import { useScrollReveal } from "@/src/hooks/use-scroll-reveal";
+import { ArrowRight, Phone, Star, CheckCircle2 } from "lucide-react";
+import { BENEFITS, GALLERY, SERVICES, STATS } from "@/src/data/home";
 
 export default function Home() {
   useScrollReveal();
@@ -128,14 +33,18 @@ export default function Home() {
               Especialistas en Gas Natural en Lima
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-6 text-balance animate-fade-in-up delay-100">
-              Instalación y Conversión de{" "}
-              <span className="text-gradient-yellow">Gas Natural</span> en Lima
+              Instalación, Conexión y Suministro de{" "}
+              <span className="text-gradient-yellow">Gas Natural y GLP</span> en
+              todo el Perú
             </h1>
             <p className="text-lg sm:text-xl text-gray-200 leading-relaxed mb-8 max-w-2xl animate-fade-in-up delay-200">
-              Ahorra hasta{" "}
-              <strong className="text-maak-yellow">50% en energía</strong> con
-              instalaciones seguras, certificadas y respaldo técnico
-              profesional. Servicio residencial, comercial e industrial.
+              Impulsamos tus proyectos con energia segura. Expertos en
+              instalaciones de gas natural y GLP para los sectores{" "}
+              <strong className="text-maak-yellow">
+                residencial, comercial, multifamiliar e industrial.
+              </strong>{" "}
+              Ejecutamos proyectos con altos estándares de seguridad, calidad y
+              respaldo ténico profesional.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-300">
               <a
