@@ -26,10 +26,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -103,6 +99,7 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
+                onClick={() => setOpen(false)}
                 className={`block px-4 py-3 rounded-lg text-sm font-semibold transition-colors ${
                   pathname === link.href
                     ? "bg-maak-yellow/10 text-maak-yellow"
@@ -118,6 +115,7 @@ export default function Navbar() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
               className="block text-center bg-maak-yellow text-maak-dark font-bold text-sm px-5 py-3 rounded-lg"
             >
               Solicitar Visita Técnica

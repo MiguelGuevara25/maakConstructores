@@ -1,6 +1,8 @@
 import { Flame, MapPin, Phone, Mail } from "lucide-react";
 import { COMPANY, WHATSAPP_LINK } from "../libs/company";
 import Link from "next/link";
+import Instagram from "../assets/icons/Instagram";
+import Facebook from "../assets/icons/Facebook";
 
 const SERVICES = [
   { label: "Gas Natural Residencial", href: "/servicios#residencial" },
@@ -48,8 +50,9 @@ export default function Footer() {
                 className="w-9 h-9 rounded-lg bg-white/10 hover:bg-maak-yellow hover:text-maak-dark flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
-                {/* <Instagram className="w-4 h-4" /> */}
+                <Instagram />
               </a>
+              
               <a
                 href="https://facebook.com/maakperu"
                 target="_blank"
@@ -57,8 +60,9 @@ export default function Footer() {
                 className="w-9 h-9 rounded-lg bg-white/10 hover:bg-maak-yellow hover:text-maak-dark flex items-center justify-center transition-colors"
                 aria-label="Facebook"
               >
-                {/* <Facebook className="w-4 h-4" /> */}
+                <Facebook />
               </a>
+
               <a
                 href={`mailto:${COMPANY.email}`}
                 className="w-9 h-9 rounded-lg bg-white/10 hover:bg-maak-yellow hover:text-maak-dark flex items-center justify-center transition-colors"

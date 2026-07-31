@@ -1,15 +1,14 @@
 "use client";
 
-import { MessageCircle, X } from "lucide-react";
+import { X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { WHATSAPP_LINK } from "../libs/company";
+import Whatsapp from "../assets/icons/Whatsapp";
 
 export default function WhatsAppBtn() {
   const [showTooltip, setShowTooltip] = useState(false);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const timer = setTimeout(() => setShowTooltip(true), 2500);
     const hideTimer = setTimeout(() => setShowTooltip(false), 9000);
     return () => {
@@ -17,8 +16,6 @@ export default function WhatsAppBtn() {
       clearTimeout(hideTimer);
     };
   }, []);
-
-  if (!mounted) return null;
 
   return (
     <div className="whatsapp-btn">
@@ -49,11 +46,7 @@ export default function WhatsAppBtn() {
         className="flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-2xl hover:scale-110 transition-transform"
         aria-label="WhatsApp"
       >
-        <MessageCircle
-          className="w-7 h-7 text-white"
-          fill="white"
-          strokeWidth={1.5}
-        />
+        <Whatsapp />
       </a>
     </div>
   );
