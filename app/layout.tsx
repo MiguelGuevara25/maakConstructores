@@ -4,11 +4,12 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Footer from "@/src/components/Footer";
 import WhatsAppBtn from "@/src/components/WhatsAppBtn";
+import { SITE_URL } from "@/src/libs/seo";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://maakconstructores.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default:
       "Maak Constructores | Instalación y Conversión de Gas Natural en Lima",
@@ -39,16 +40,21 @@ export const metadata: Metadata = {
       "Maak Constructores | Instalación y Conversión de Gas Natural en Lima",
     description:
       "Especialistas en instalación, conversión y mantenimiento de gas natural en Lima. Ahorra hasta 50% en energía con seguridad certificada.",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Maak Constructores — Instalación, conversión y mantenimiento de gas natural en Lima",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Maak Constructores | Gas Natural en Lima",
     description:
       "Instalación, conversión y mantenimiento de gas natural en Lima, Perú.",
-  },
-  robots: {
-    index: true,
-    follow: true,
+    images: ["/og.png"],
   },
 };
 

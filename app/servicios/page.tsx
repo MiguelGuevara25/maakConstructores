@@ -1,19 +1,25 @@
-"use client";
-
+import type { Metadata } from "next";
+import { pageMetadata } from "@/src/libs/seo";
 import Header from "@/src/components/Header";
 import Process from "@/src/components/services/Process";
 import { SERVICES } from "@/src/data/servicios";
-import { useScrollReveal } from "@/src/hooks/use-scroll-reveal";
 import { WHATSAPP_LINK_CUSTOM } from "@/src/libs/company";
 import { ArrowRight } from "lucide-react";
 
 import Image from "next/image";
+import ScrollReveal from "@/src/components/ScrollReveal";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Servicios de Gas Natural",
+  description:
+    "Instalación, conversión y mantenimiento de gas natural para hogares, comercios e industrias en Lima. Solicita tu visita técnica sin costo.",
+  path: "/servicios",
+});
 
 export default function ServiciosPage() {
-  useScrollReveal();
-
   return (
     <div className="overflow-x-hidden">
+      <ScrollReveal />
       {/* HEADER */}
       <Header
         src="https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"

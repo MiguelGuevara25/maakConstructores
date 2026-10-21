@@ -1,22 +1,24 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 
 import { SERVICES } from "@/src/data/home";
-import { useScrollReveal } from "@/src/hooks/use-scroll-reveal";
 
 import CTA from "@/src/components/home/CTA";
 import Hero from "@/src/components/home/Hero";
 import Gallery from "@/src/components/home/Gallery";
 import Benefits from "@/src/components/home/Benefits";
+import ScrollReveal from "@/src/components/ScrollReveal";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
-  useScrollReveal();
-
   return (
     <div className="overflow-x-hidden">
+      <ScrollReveal />
       <Hero />
       <Benefits />
 
