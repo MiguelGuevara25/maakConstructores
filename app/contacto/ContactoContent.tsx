@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { WHATSAPP_LINK_CUSTOM } from "@/src/libs/company";
 import type {
   ContactErrors,
@@ -18,6 +19,7 @@ import InfoContact from "@/src/components/contact/InfoContact";
 import Form from "@/src/components/contact/Form";
 
 export default function ContactoContent() {
+  const router = useRouter();
   const [form, setForm] = useState<ContactFormValues>(EMPTY_CONTACT_FORM);
   const [errors, setErrors] = useState<ContactErrors>({});
   const [status, setStatus] = useState<ContactStatus>("idle");
@@ -62,12 +64,11 @@ export default function ContactoContent() {
     }
 
     setStatus("sending");
-    setTimeout(() => {
-      setStatus("sent");
-      setForm(EMPTY_CONTACT_FORM);
-      setErrors({});
-      setTimeout(() => setStatus("idle"), 5000);
-    }, 700);
+    setForm(EMPTY_CONTACT_FORM);
+    setErrors({});
+
+    // Brief feedback on the button before showing the thank-you page.
+    window.setTimeout(() => router.push("/gracias"), 600);
   };
 
   return (

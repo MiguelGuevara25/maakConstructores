@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Footer from "@/src/components/Footer";
 import WhatsAppBtn from "@/src/components/WhatsAppBtn";
+import CookieBanner from "@/src/components/CookieBanner";
 import { SITE_URL } from "@/src/libs/seo";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -69,6 +70,7 @@ export default function RootLayout({
         <Navbar />
         <main className="pt-16 lg:pt-20">{children}</main>
         <Footer />
+        <CookieBanner />
         <WhatsAppBtn />
       </body>
     </html>

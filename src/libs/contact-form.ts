@@ -4,7 +4,7 @@ export type ContactFormValues = Record<ContactField, string>;
 
 export type ContactErrors = Partial<Record<ContactField, string>>;
 
-export type ContactStatus = "idle" | "sending" | "sent" | "error";
+export type ContactStatus = "idle" | "sending" | "error";
 
 export const EMPTY_CONTACT_FORM: ContactFormValues = {
   name: "",

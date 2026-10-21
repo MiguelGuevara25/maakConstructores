@@ -3,6 +3,7 @@ import { COMPANY, WHATSAPP_LINK } from "../libs/company";
 import Link from "next/link";
 import Instagram from "../assets/icons/Instagram";
 import Facebook from "../assets/icons/Facebook";
+import CookiePreferencesButton from "./CookiePreferencesButton";
 
 const SERVICES = [
   { label: "Gas Natural Residencial", href: "/servicios#residencial" },
@@ -143,10 +144,19 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-gray-500">
-            © {new Date().getFullYear()} Maak Constructores. Todos los derechos
-            reservados.
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+            <p className="text-xs text-gray-500">
+              © {new Date().getFullYear()} Maak Constructores. Todos los
+              derechos reservados.
+            </p>
+            <Link
+              href="/terminos-y-condiciones"
+              className="text-xs text-gray-500 hover:text-maak-yellow underline-offset-2 hover:underline transition-colors"
+            >
+              Términos y condiciones
+            </Link>
+            <CookiePreferencesButton />
+          </div>
           <p className="text-xs text-gray-500">
             Diseñado con estándares de seguridad y calidad técnica.
           </p>

@@ -1,4 +1,4 @@
-import { AlertCircle, CheckCircle2, Loader2, Send } from "lucide-react";
+import { AlertCircle, Loader2, Send } from "lucide-react";
 
 import { DISTRICTS, SERVICE_TYPES } from "@/src/data/contacto";
 import type {
@@ -163,12 +163,6 @@ export default function Form({
             <Loader2 className="w-5 h-5 animate-spin" />
           </>
         )}
-        {status === "sent" && (
-          <>
-            ¡Mensaje listo!
-            <CheckCircle2 className="w-5 h-5" />
-          </>
-        )}
         {status === "error" && (
           <>
             Reintentar envío
@@ -178,13 +172,6 @@ export default function Form({
       </button>
 
       <div aria-live="polite">
-        {status === "sent" && (
-          <p className="text-center text-sm text-green-600 font-medium">
-            Se abrió WhatsApp con tu mensaje. Si no se abrió, revisa que tu
-            navegador no esté bloqueando ventanas emergentes.
-          </p>
-        )}
-
         {status === "error" && (
           <div
             role="alert"
