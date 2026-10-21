@@ -4,8 +4,8 @@ import Header from "@/src/components/Header";
 import Process from "@/src/components/services/Process";
 import { SERVICES } from "@/src/data/servicios";
 import { useScrollReveal } from "@/src/hooks/use-scroll-reveal";
-import { WHATSAPP_LINK, WHATSAPP_LINK_CUSTOM } from "@/src/libs/company";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { WHATSAPP_LINK_CUSTOM } from "@/src/libs/company";
+import { ArrowRight } from "lucide-react";
 
 import Image from "next/image";
 

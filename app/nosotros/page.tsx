@@ -13,8 +13,6 @@ export default function NosotrosPage() {
 
   return (
     <div className="overflow-x-hidden">
-      {/* HEADER */}
-
       <Header
         src="https://images.pexels.com/photos/8961146/pexels-photo-8961146.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
         title="Sobre Nosotros"
@@ -24,23 +22,16 @@ export default function NosotrosPage() {
             respaldo técnico profesional."
       />
 
-      {/* INTRO + IMAGE */}
       <OurHistory />
 
-      {/* MISSION / VISION */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <MissionVision />
-
-          {/* VALUES */}
           <Values />
         </div>
       </section>
 
-      {/* TIMELINE */}
       <Timeline />
-
-      {/* CTA */}
       <CTA />
     </div>
   );

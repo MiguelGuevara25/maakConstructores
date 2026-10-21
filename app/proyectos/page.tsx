@@ -9,8 +9,8 @@ import { PROJECTS } from "@/src/data/proyectos";
 import GalleryGrid from "@/src/components/project/GalleryGrid";
 
 export default function ProyectosPage() {
-  useScrollReveal();
   const [active, setActive] = useState<string>("Todos");
+  useScrollReveal([active]);
 
   const filtered =
     active === "Todos" ? PROJECTS : PROJECTS.filter((p) => p.cat === active);

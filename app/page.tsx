@@ -17,13 +17,9 @@ export default function Home() {
 
   return (
     <div className="overflow-x-hidden">
-      {/* HERO */}
       <Hero />
-
-      {/* BENEFITS */}
       <Benefits />
 
-      {/* SERVICES SUMMARY */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14 reveal">
@@ -81,10 +77,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* GALLERY PREVIEW */}
       <Gallery />
-
-      {/* CTA BANNER */}
       <CTA />
     </div>
   );

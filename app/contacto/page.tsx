@@ -40,7 +40,6 @@ export default function ContactoPage() {
 
   return (
     <div className="overflow-x-hidden">
-      {/* HEADER */}
       <Header
         src="https://images.pexels.com/photos/6285146/pexels-photo-6285146.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
         title="Contáctanos"
@@ -49,11 +48,10 @@ export default function ContactoPage() {
             coordinar tu cotización personalizada."
       />
 
-      {/* CONTACT */}
       <section className="py-20 bg-maak-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-            {/* Form */}
+
             <div className="lg:col-span-3 reveal-left">
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
                 <h2 className="text-2xl font-extrabold text-maak-dark mb-2">
@@ -64,11 +62,15 @@ export default function ContactoPage() {
                   enviar.
                 </p>
 
-                <Form handleSubmit={handleSubmit} form={form} setForm={setForm} status={status} />
+                <Form
+                  handleSubmit={handleSubmit}
+                  form={form}
+                  setForm={setForm}
+                  status={status}
+                />
               </div>
             </div>
 
-            {/* Contact info */}
             <InfoContact />
           </div>
         </div>
